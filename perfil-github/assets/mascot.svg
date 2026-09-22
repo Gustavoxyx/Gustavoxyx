@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="320" viewBox="0 0 400 320">
+  <defs>
+    <radialGradient id="aura"><stop offset="0" stop-color="#00f0ff" stop-opacity=".22"/><stop offset="1" stop-color="#00f0ff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="neon" x1="0" x2="1"><stop offset="0" stop-color="#00f0ff"/><stop offset=".5" stop-color="#7a5cff"/><stop offset="1" stop-color="#ff2bd6"/></linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <style>
+    .mono{font-family:'JetBrains Mono','Fira Code',Consolas,'Courier New',monospace}
+    .bob{animation:bob 3s ease-in-out infinite}
+    @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    .look{animation:look 4s ease-in-out infinite}
+    @keyframes look{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}60%{transform:translateX(7px)}}
+    .lid{transform-origin:200px 123px;animation:lid 5s infinite}
+    @keyframes lid{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+    .tip{animation:tip 1.2s steps(1) infinite}
+    @keyframes tip{50%{opacity:.2}}
+    .core{transform-origin:200px 214px;animation:core 1.6s ease-in-out infinite}
+    @keyframes core{50%{transform:scale(.7);opacity:.6}}
+    .armL{animation:tap .32s ease-in-out infinite alternate}
+    .armR{animation:tap .32s ease-in-out .16s infinite alternate}
+    @keyframes tap{from{transform:translateY(0)}to{transform:translateY(-7px)}}
+    .f{opacity:0;animation:fl 4s ease-out infinite}
+    .f2{animation-delay:1s}.f3{animation-delay:2s}.f4{animation-delay:3s}
+    @keyframes fl{0%{opacity:0;transform:translateY(0)}20%{opacity:1}100%{opacity:0;transform:translateY(-60px)}}
+    .shadow{transform-origin:200px 296px;animation:sh 3s ease-in-out infinite}
+    @keyframes sh{50%{transform:scaleX(.85);opacity:.6}}
+    .c1{animation:cl 2.4s steps(1) infinite}.c2{animation:cl 2.4s steps(1) .6s infinite}.c3{animation:cl 2.4s steps(1) 1.2s infinite}
+    @keyframes cl{50%{opacity:.25}}
+    .led{animation:led 1.4s ease-in-out infinite}
+    @keyframes led{50%{opacity:.3}}
+  </style>
+
+  <circle cx="200" cy="165" r="150" fill="url(#aura)"/>
+  <ellipse class="shadow" cx="200" cy="296" rx="115" ry="8" fill="#00f0ff" opacity=".18"/>
+
+  <!-- painel holográfico -->
+  <g opacity=".9">
+    <rect x="18" y="62" width="92" height="64" rx="6" fill="#00f0ff" fill-opacity=".05" stroke="#00f0ff" stroke-opacity=".5"/>
+    <rect class="c1" x="28" y="76" width="52" height="4" rx="2" fill="#00f0ff"/>
+    <rect class="c2" x="36" y="88" width="62" height="4" rx="2" fill="#ff2bd6"/>
+    <rect class="c3" x="36" y="100" width="40" height="4" rx="2" fill="#7a5cff"/>
+    <rect class="c1" x="28" y="112" width="30" height="4" rx="2" fill="#39ff88"/>
+  </g>
+
+  <!-- partículas de código -->
+  <g class="mono" font-weight="700">
+    <text class="f" x="300" y="112" font-size="18" fill="#00f0ff">&lt;/&gt;</text>
+    <text class="f f2" x="318" y="186" font-size="15" fill="#39ff88">01</text>
+    <text class="f f3" x="62" y="176" font-size="17" fill="#ff2bd6">{ }</text>
+    <text class="f f4" x="330" y="240" font-size="16" fill="#7a5cff">λ</text>
+  </g>
+
+  <!-- mesa e teclado -->
+  <rect x="70" y="256" width="260" height="12" rx="4" fill="#0f172a" stroke="#00f0ff" stroke-opacity=".45"/>
+  <rect x="110" y="244" width="180" height="12" rx="3" fill="#1e293b" stroke="#7a5cff" stroke-opacity=".7"/>
+  <g fill="#00f0ff" opacity=".45">
+    <rect x="118" y="248" width="10" height="4" rx="1"/><rect x="132" y="248" width="10" height="4" rx="1"/>
+    <rect x="146" y="248" width="10" height="4" rx="1"/><rect x="160" y="248" width="10" height="4" rx="1"/>
+    <rect x="174" y="248" width="52" height="4" rx="1"/><rect x="230" y="248" width="10" height="4" rx="1"/>
+    <rect x="244" y="248" width="10" height="4" rx="1"/><rect x="258" y="248" width="10" height="4" rx="1"/>
+    <rect x="272" y="248" width="10" height="4" rx="1"/>
+  </g>
+
+  <!-- robô BYTE-01 -->
+  <g class="bob">
+    <line x1="200" y1="56" x2="200" y2="80" stroke="#7a5cff" stroke-width="3"/>
+    <circle class="tip" cx="200" cy="52" r="6" fill="#ff2bd6" filter="url(#glow)"/>
+    <rect x="128" y="108" width="12" height="32" rx="4" fill="#7a5cff"/>
+    <rect x="260" y="108" width="12" height="32" rx="4" fill="#7a5cff"/>
+    <rect x="140" y="80" width="120" height="90" rx="24" fill="#0f172a" stroke="#00f0ff" stroke-width="3"/>
+    <rect x="155" y="99" width="90" height="46" rx="14" fill="#020617" stroke="#1e3a5f"/>
+    <g class="look"><g class="lid" filter="url(#glow)">
+      <rect x="172" y="113" width="16" height="20" rx="5" fill="#00f0ff"/>
+      <rect x="212" y="113" width="16" height="20" rx="5" fill="#00f0ff"/>
+    </g></g>
+    <rect class="led" x="178" y="153" width="44" height="5" rx="2.5" fill="#39ff88"/>
+    <rect x="188" y="170" width="24" height="12" fill="#1e293b"/>
+    <rect x="150" y="180" width="100" height="68" rx="16" fill="#0f172a" stroke="#7a5cff" stroke-width="3"/>
+    <circle cx="200" cy="214" r="17" fill="#020617" stroke="#1e3a5f"/>
+    <circle class="core" cx="200" cy="214" r="10" fill="#00f0ff" filter="url(#glow)"/>
+    <g class="armL">
+      <rect x="122" y="190" width="22" height="52" rx="10" fill="#1e293b" stroke="#00f0ff" stroke-width="2"/>
+      <rect x="118" y="236" width="30" height="13" rx="6" fill="#00f0ff"/>
+    </g>
+    <g class="armR">
+      <rect x="256" y="190" width="22" height="52" rx="10" fill="#1e293b" stroke="#00f0ff" stroke-width="2"/>
+      <rect x="252" y="236" width="30" height="13" rx="6" fill="#00f0ff"/>
+    </g>
+  </g>
+
+  <text class="mono" x="200" y="314" font-size="11" fill="#7d8ba3" text-anchor="middle" letter-spacing="1">BYTE-01 · unidade de suporte de código</text>
+</svg>
